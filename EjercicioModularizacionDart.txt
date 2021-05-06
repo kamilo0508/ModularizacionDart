@@ -1,15 +1,12 @@
-
-  class Vehiculo { 
-  int llantas; 
-  int asientos; 
-  String modelo; 
+class Vehiculo {
+  int llantas;
+  int asientos;
+  String modelo;
   String marca;
-  
- 
-  Vehiculo( this.llantas, this.asientos, this.marca, this.modelo);
-  
-   
-    String toString() {
+
+  Vehiculo(this.llantas, this.asientos, this.marca, this.modelo);
+
+  String toString() {
     return """ 
     Vehiculo:[ 
       llantas: $llantas
@@ -19,282 +16,302 @@
       ]
     """;
   }
-  
 }
 
-  @override
- bool esMayorFunction( int numeroUno, int numeroDos  ){
-   return (numeroUno > numeroDos );
+@override
+bool esMayorFunction(int numeroUno, int numeroDos) {
+  return (numeroUno > numeroDos);
 }
 
-
-  int compareToDateNow( String date ){
-  DateTime currentTime =  DateTime.now();
-  DateTime otherDate = DateTime.parse( date );
-  return currentTime.compareTo( otherDate );
-  }
-
- 
-
-String compareToDateNowasString( String date ){
-  DateTime currentTime =  DateTime.now();
-  DateTime otherDate = DateTime.parse( date );
-  int result = currentTime.compareTo( otherDate );
-  return ( ( result >= 0 ) ? 'ahora o en el futuro': ' del pasado' ); 
+int compareToDateNow(String date) {
+  DateTime currentTime = DateTime.now();
+  DateTime otherDate = DateTime.parse(date);
+  return currentTime.compareTo(otherDate);
 }
 
- 
-
-String compareToDateNowasStringTwo( String date ){
-  int result =   DateTime.now().compareTo( DateTime.parse( date) );
-  return ( ( result >= 0 ) ? 'ahora o en el futuro': ' del pasado' );
-  
-  
+String compareToDateNowasString(String date) {
+  DateTime currentTime = DateTime.now();
+  DateTime otherDate = DateTime.parse(date);
+  int result = currentTime.compareTo(otherDate);
+  return ((result >= 0) ? 'ahora o en el futuro' : ' del pasado');
 }
 
-void comparacionfechas(){
-  
-  print( compareToDateNowasString('2020-11-20') );
-  print( compareToDateNowasString('2022-09-01') );
-  
+String compareToDateNowasStringTwo(String date) {
+  int result = DateTime.now().compareTo(DateTime.parse(date));
+  return ((result >= 0) ? 'ahora o en el futuro' : ' del pasado');
 }
 
+void comparacionfechas() {
+  print(compareToDateNowasString('2020-11-20'));
+  print(compareToDateNowasString('2022-09-01'));
+}
 
-void switche(){
-   String grado = "B"; 
-  switch( grado ){
-    case "A": {
-        print( "Excellent");
+void switche() {
+  String grado = "B";
+  switch (grado) {
+    case "A":
+      {
+        print("Excellent");
       }
       break;
-    case "B": {
-      print( "good" );
-    }
+    case "B":
+      {
+        print("good");
+      }
       break;
-    
-    case "C": {
-      print("Fair");
-    }
+
+    case "C":
+      {
+        print("Fair");
+      }
       break;
-      
-    case "D": {
-      print( "Poor");
-    }
+
+    case "D":
+      {
+        print("Poor");
+      }
       break;
-      
-    default: {
-      print( "invalid choice");
-    }
+
+    default:
+      {
+        print("invalid choice");
+      }
       break;
   }
 }
 
-void fechas(){
-  
-    String momento = ( ( compareToDateNow('2020-11-20') >= 0 ) ? 'ahora     o en el futuro': 'del pasado' );
-  
-    print( momento );
+void fechas() {
+  String momento = ((compareToDateNow('2020-11-20') >= 0)
+      ? 'ahora     o en el futuro'
+      : 'del pasado');
 
-   String momentoDos = ( ( compareToDateNow( '2022-09-01' ) >= 0 )?        "ahora o en el futura": "del pasado" );
+  print(momento);
 
-   print( momentoDos );
-  
+  String momentoDos = ((compareToDateNow('2022-09-01') >= 0)
+      ? "ahora o en el futura"
+      : "del pasado");
+
+  print(momentoDos);
 }
 
-void mayor(){
-  
+void mayor() {
   bool isTrue = true;
 
-  String esMayorAsString = ( (esMayorFunction(5, 6) == true)?"si es       mayor": "no es mayor" );
+  String esMayorAsString =
+      ((esMayorFunction(5, 6) == true) ? "si es       mayor" : "no es mayor");
 
-  print( esMayorAsString );
-  
-    if( esMayorFunction(8, 6) ){
-      
-      esMayorAsString = "es mayor desde un if";
-      
-     } else {
-      
-      esMayorAsString = "no es mayor desde un if";
-    }
-    
-  print( esMayorAsString );
-  
-  dynamic esMayorDinamico = ( (isTrue != true)? "Si es mayor" : 52 );
-  
-  var esMayorVar = ( ( 5>6 )? "Si es mayor tipo var" : 52 );
-  bool esMayor = (6>5) ;
-  print( esMayor );
+  print(esMayorAsString);
 
- 
+  if (esMayorFunction(8, 6)) {
+    esMayorAsString = "es mayor desde un if";
+  } else {
+    esMayorAsString = "no es mayor desde un if";
+  }
 
-  print( esMayorDinamico );
-  print( "Es mayor de tipo var ${ esMayorVar }" );
-  
+  print(esMayorAsString);
+
+  dynamic esMayorDinamico = ((isTrue != true) ? "Si es mayor" : 52);
+
+  var esMayorVar = ((5 > 6) ? "Si es mayor tipo var" : 52);
+  bool esMayor = (6 > 5);
+  print(esMayor);
+
+  print(esMayorDinamico);
+  print("Es mayor de tipo var ${esMayorVar}");
 }
 
-void fechascomparacion(){
-  
+void fechascomparacion() {
   DateTime currentDate = DateTime.now();
-  print( currentDate.toString() );
-  print( currentDate.toIso8601String() );
-  print( currentDate.toUtc() );
-  print( currentDate.toLocal() );
-  
+  print(currentDate.toString());
+  print(currentDate.toIso8601String());
+  print(currentDate.toUtc());
+  print(currentDate.toLocal());
+
   DateTime date = DateTime.parse('2020-11-20');
-  print( date.toString() );
-  print( date.toIso8601String() );
-  print( date.toUtc() );
-  print( date.toLocal() );
-  
-  print( currentDate.timeZoneName ); 
-    
+  print(date.toString());
+  print(date.toIso8601String());
+  print(date.toUtc());
+  print(date.toLocal());
+
+  print(currentDate.timeZoneName);
+
   Duration diff = currentDate.difference(date);
-  
-  print("diferencia de dias ${ diff.inDays }" );
+
+  print("diferencia de dias ${diff.inDays}");
 }
 
-void enwhile(){
-   
+void enwhile() {
   int count = 1;
   bool loppWhile = true;
-  
-  while( loppWhile ) {
-    
-    print( " dentro del while ${ count }" );
+
+  while (loppWhile) {
+    print(" dentro del while ${count}");
     count++;
-    if( count == 4 ){
-      
+    if (count == 4) {
       loppWhile = false;
     }
   }
-  
-  
+
   count = 1;
-  while( count <= 10 ) {
-    
-    print( "dentro del while ${ count }" );
+  while (count <= 10) {
+    print("dentro del while ${count}");
     count++;
-    
-    if( count == 4 ){
-      
+
+    if (count == 4) {
       break;
     }
   }
-  
-  print( "afuera del while ");
 
+  print("afuera del while ");
 }
 
-void listnums(){
-    int n = 10; 
-  
-  do{
-    
+void listnums() {
+  int n = 10;
+
+  do {
     print(n);
     n--;
-    
-  } while( n > 0 );
+  } while (n > 0);
 }
 
-void factorial(){
-  
+void factorial() {
   int num = 5;
   int factorial = 1;
-  
-  while( num >= 1 ) {
+
+  while (num >= 1) {
     factorial = factorial * num;
-    num--; 
+    num--;
   }
-  
-  print( "The factorial is ${ factorial }" );
+
+  print("The factorial is ${factorial}");
 }
 
-
-void holamundo(){
-  
+void holamundo() {
   var number = "hola";
-  print(  number.runtimeType );
-  
-  if( number == 'hola' ) {
-    print( 'hola mundo' );
+  print(number.runtimeType);
+
+  if (number == 'hola') {
+    print('hola mundo');
   } else {
-    print( 'este es un numero' );
+    print('este es un numero');
   }
 }
 
-void test(){
+void test() {
   dynamic test = 15;
-  print( test.runtimeType );
-  print( test.toString() );
-  print( test );
+  print(test.runtimeType);
+  print(test.toString());
+  print(test);
   test = 'hola mundo';
-  print( test.runtimeType );
-  print( test );
+  print(test.runtimeType);
+  print(test);
 }
 
-void lista(){
-    var list = [ 'apples' , 'bananas' , 'oranges' ];
-  
-  
-  for(int index = 0 ; index < list.length; index ++){
-    print('la fruta desde un for es: ${ list[index]}');
+void lista() {
+  var list = ['apples', 'bananas', 'oranges'];
+
+  for (int index = 0; index < list.length; index++) {
+    print('la fruta desde un for es: ${list[index]}');
   }
-  
-  list.forEach((String estoEsUnaVariable){
+
+  list.forEach((String estoEsUnaVariable) {
     print('la fruta es ${estoEsUnaVariable}');
   });
-    
+}
+
+abstract class Animal {}
+
+abstract class Mammal extends Animal {}
+
+abstract class Bird extends Animal {}
+
+abstract class Fish extends Animal {}
+
+class Dolphin extends Mammal with SwimMixin {}
+
+class Bat extends Mammal with WalkMixin, FlyMixin {}
+
+class Cat extends Mammal with WalkMixin {}
+
+class Dove extends Bird with FlyMixin {}
+
+class Duck extends Bird with WalkMixin {}
+
+class Shark extends Fish with SwimMixin {}
+
+class FliyingFish extends Fish with SwimMixin {}
+
+mixin WalkMixin {
+  void walk(String text) => print("walk ${text}");
+
+  void velocity() => print("is very fast");
+}
+
+mixin SwimMixin {
+  void swim(String text) => print("swim ${text}");
+}
+
+mixin FlyMixin {
+  void fly(String text) => print("fly ${text}");
 }
 
 void main() {
-    
-     lista();
+  Dolphin newDolphin = new Dolphin();
+  newDolphin.swim("Norberto");
 
-    print("-------------------------");
+  Cat newCat = new Cat();
+  newCat.walk("inari");
+  newCat.velocity();
 
-    comparacionfechas();
-  
-    print("-------------------------");
-  
-    switche();
-  
-    print("-------------------------");
-  
-    fechas();
-  
-    print("-------------------------");
-  
-    mayor();
-  
-    print("-------------------------");
- 
-    fechascomparacion();
-  
-    print("-------------------------");
-    
-    enwhile();
-  
-    print("-------------------------");
-    
-    listnums();
-  
-    print("-------------------------");
+  Bat newBat = new Bat();
+  newBat.fly('ricardo');
 
-    factorial();
-    
-    print("-------------------------");
+  print("-------------------------");
 
-    holamundo();
-  
-    print("-------------------------");
-    
-    Vehiculo nuevo = new Vehiculo(4, 6,'volvo', '2013');
-    print(nuevo);
+  lista();
 
-    print("-------------------------");
-    
-    test();
-    
+  print("-------------------------");
 
+  comparacionfechas();
+
+  print("-------------------------");
+
+  switche();
+
+  print("-------------------------");
+
+  fechas();
+
+  print("-------------------------");
+
+  mayor();
+
+  print("-------------------------");
+
+  fechascomparacion();
+
+  print("-------------------------");
+
+  enwhile();
+
+  print("-------------------------");
+
+  listnums();
+
+  print("-------------------------");
+
+  factorial();
+
+  print("-------------------------");
+
+  holamundo();
+
+  print("-------------------------");
+
+  Vehiculo nuevo = new Vehiculo(4, 6, 'volvo', '2013');
+  print(nuevo);
+
+  print("-------------------------");
+
+  test();
 }
