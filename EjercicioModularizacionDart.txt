@@ -233,8 +233,24 @@ void test(){
   print( test );
 }
 
+void lista(){
+    var list = [ 'apples' , 'bananas' , 'oranges' ];
+  
+  
+  for(int index = 0 ; index < list.length; index ++){
+    print('la fruta desde un for es: ${ list[index]}');
+  }
+  
+  list.forEach((String estoEsUnaVariable){
+    print('la fruta es ${estoEsUnaVariable}');
+  });
+    
+}
+
 void main() {
     
+     lista();
+
     print("-------------------------");
 
     comparacionfechas();
