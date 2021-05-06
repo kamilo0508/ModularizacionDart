@@ -1,0 +1,71 @@
+// Ejercicio 3 
+class Relacionales{
+  
+  int num1 = 0;
+  int num2 = 0;
+  int num3 = 0;
+  int num4 = 0;
+ 
+}
+
+void operaciones(){
+  
+   Relacionales R = new Relacionales();
+
+    
+    R.num1 = 5;
+    R.num2 = 7;
+    R.num3 = 2;
+    R.num4 = 8;
+  
+    dynamic numra1 = R.num1/R.num2;
+    dynamic numra2 = R.num3/R.num4;
+
+    // SUMA
+
+    dynamic sum;
+    
+    print("SUMA:");
+      
+    sum = numra1 + numra2;
+    
+    print(sum);
+    
+    // RESTA
+    
+    print("RESTA:");
+  
+    dynamic rest;
+  
+    rest = numra1 - numra2;
+     
+    print(rest);
+    
+    // DIVISIÓN
+    
+    print("DIVISIÓN:");
+  
+    dynamic div;
+  
+    div = numra1 / numra2;
+     
+    print(div);
+  
+    // MULTIPLICACIÓN
+  
+    print("MULTIPLICACIÓN:");
+  
+    dynamic mult;
+  
+    mult = numra1 * numra2;
+     
+    print(mult);
+}
+void main(){
+  
+ operaciones();
+  
+}
+
+
+

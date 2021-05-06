@@ -1,0 +1,63 @@
+// EJERCICIO 13
+
+void trabajo() {
+  
+
+
+  var list = ['Estudiar', 'Programar', 'Comer'];
+  
+  String cola = "saca";
+  switch (cola) {
+      
+    case "mete":
+      {
+        print("Trabajos de Frank");
+        list.add('Ducharse');
+        print(list);
+      }
+      break;
+      
+    case "primero":
+      {
+       
+        print(list.first);
+      }
+      break;
+
+    case "saca":
+      {
+        print("Trabajos de Frank");
+        list.add('Ducharse');
+        list.remove("Comer");
+        print(list);
+      }
+      break;
+      
+    case "trabajos":
+      {
+        print("Trabajos de Frank");
+        list.add('Ducharse');
+        print(list.reversed);
+      }
+      break;
+      
+    case "trabajos_de":
+      {
+        print("Trabajos de Sebastian");
+        var list2 = ['hacer ejercicio', 'Ducharse', 'Comer', 'Dormir'];
+        print(list2);
+      }
+      break;
+
+    default:
+      {
+        print("invalid choice");
+      }
+      break;
+  }
+}
+
+void main(){
+  
+   trabajo();
+}

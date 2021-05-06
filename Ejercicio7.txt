@@ -1,0 +1,33 @@
+// EJERCICIO 7
+class Fecha{
+ 
+  dynamic day; 
+  dynamic month;
+  dynamic year;
+
+}
+void fechascomparacion() {
+  
+  Fecha f = new Fecha();
+  
+  DateTime date = DateTime.parse('2000-02-16');
+  
+  f.day = date.day; 
+  f.month = date.month;
+  f.year = date.year;
+  
+  if(f.month == 02){
+    
+    f.month = "febrero";
+    
+     if(f.day == 16 && f.month == 02 && f.year == 2000){
+     
+       print(f.day + f.month + f.year);
+    }
+  }
+   
+}
+void main(){
+  
+   fechascomparacion();
+}

@@ -1,0 +1,54 @@
+// EJERCICIO 12
+
+abstract class Figuras {}
+
+
+abstract class Triangulo extends Figuras {}
+
+abstract class Cuadrado extends Figuras {}
+
+abstract class Pentagono extends Figuras {}
+
+
+class Figura1 extends Triangulo with AnguloTriangulo{}
+
+class Figura2 extends Cuadrado with AnguloCuadrado{}
+
+class Figura3 extends Pentagono with AnguloPentagono{}
+
+
+
+mixin AnguloTriangulo {
+  void sum(dynamic ang1, dynamic ang2, dynamic ang3) => print("Suma de Angulos Triangulo: ${ang1 + ang2 +  ang3}°");
+  
+  void res(dynamic ang1, dynamic ang2, dynamic ang3) => print("Resta de Angulos Triangulo: ${ang1 - ang2 - ang3}°");
+}
+
+mixin AnguloCuadrado {
+  void sum(dynamic ang1, dynamic ang2, dynamic ang3 , dynamic ang4) => print("Suma de Angulos Cuadrado: ${ang1 + ang2 + ang3 + ang4}°");
+  void res(dynamic ang1, dynamic ang2, dynamic ang3 , dynamic ang4) => print("Resta de Angulos Cuadrado: ${ang1 - ang2 - ang3 - ang4}°");
+}
+
+mixin AnguloPentagono {
+  void sum(dynamic ang1, dynamic ang2, dynamic ang3 , dynamic ang4, dynamic ang5) => print("Suma de Angulos interiores Pentagono: ${(ang1 + ang2 + ang3 + ang4 + ang5)}°");
+  
+   void res(dynamic ang1, dynamic ang2, dynamic ang3 , dynamic ang4, dynamic ang5) => print("Resta de Angulos interiores Pentagono: ${(ang1 - ang2 - ang3 - ang4 - ang5)}°");
+  
+}
+
+void main(){
+  
+  Figura1 triangulo = new Figura1();
+  
+  triangulo.sum( 9.5234 , 20.5 , 20.5 );
+  triangulo.res( 9.5234 , 20.5 , 20.5 );
+  
+  Figura2 cuadrado = new Figura2();
+  cuadrado.sum(20 , 20 , 20 , 20);
+  cuadrado.res(20 , 20 , 20 , 20);
+  
+  Figura3 pentagono = new Figura3();
+  pentagono.sum(10.14, 11.5 , 10.2 , 11.005320 , 10.5);
+  pentagono.res(10.14, 11.5 , 10.2 , 11.005320 , 10.5);
+
+}
